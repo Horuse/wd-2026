@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 4 - Subscription Plan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-neutral-100 flex items-center justify-center p-8">
+
+  <div class="group relative w-86 rounded-xl border border-neutral-200 shadow-md overflow-hidden cursor-pointer hover:border-black transition-shadow duration-300 hover:shadow-xl bg-white">
+    <div class="h-1.5 w-full bg-gradient-to-r from-green-400 via-teal-400 to-blue-400"></div>
+
+    <div class="p-9">
+      <h2 class="text-xl font-bold text-neutral-900 mb-3">Starter</h2>
+
+      <span class="inline-block text-xs text-neutral-600 font-bold bg-neutral-100 rounded-sm px-3 py-1 mb-3">
+        7-days free then:
+      </span>
+
+      <div class="flex items-end gap-1 mb-1">
+        <span class="text-4xl font-extrabold text-neutral-900">$83.25</span>
+        <span class="text-neutral-500 text-sm mb-1">/month</span>
+      </div>
+      <p class="text-sm text-neutral-400 mb-5">Billed yearly at <b class="text-neutral-500">$999.00</b></p>
+
+      <div class="relative mb-5">
+        <button class="w-full py-2.5 rounded-lg text-sm font-medium text-neutral-600 bg-neutral-300 font-bold border border-transparent transition-all duration-200 group-hover:bg-white group-hover:border-neutral-300 group-hover:text-neutral-800 group-hover:shadow-sm">
+          Downgrade to Starter
+        </button>
+        <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-56 bg-neutral-900 text-white text-xs rounded-lg px-3 py-2 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+          You cannot downgrade your plan until within 30 days of your next billing date.
+          <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-neutral-900"></div>
+        </div>
+      </div>
+
+      <hr class="border-neutral-200 mb-5">
+
+      <ul class="space-y-3 text-sm text-neutral-600">
+        <li class="flex gap-2">
+          <svg class="w-5 h-5 shrink-0 text-green-300 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
+          </svg>
+          <div class="mt-0.5">
+            <span class="font-semibold">Primary user + 0 free team members</span><br>
+            <span class="text-neutral-500">(extra team members for $35/month)</span>
+          </div>
+        </li>
+        <li class="flex gap-2">
+          <svg class="w-5 h-5 shrink-0 text-green-300 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
+          </svg>
+          <div class="mt-0.5"><span  class="font-semibold">Save unlimited properties</span></div>
+        </li>
+        <li class="flex gap-2">
+          <svg class="w-5 h-5 shrink-0 text-green-300 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
+          </svg>
+          <div class="mt-0.5">
+            <span  class="font-semibold"><b>10 000</b> exports</span><br>
+            <span class="text-neutral-500">(additional exports at $0.02 each)</span>
+          </div>
+        </li>
+        <li class="flex gap-2">
+          <svg class="w-5 h-5 shrink-0 text-green-300 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
+          </svg>
+          <div class="mt-0.5">
+            <span  class="font-semibold"><b>500</b> free skip traces</span><br>
+            <span class="text-neutral-500">(additional skip tracing at $0.08 each)</span>
+          </div>
+        </li>
+        <li class="flex gap-2">
+          <svg class="w-5 h-5 shrink-0 text-green-300 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
+          </svg>
+          <div class="mt-0.5"><span class="font-semibold">Imports $0.01</span></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
