@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 5 - Table</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .icon-zoom { display:inline-block; width:20px; height:20px; }
+  </style>
+</head>
+<body class="bg-white p-6 text-sm text-neutral-800">
+
+  <div class="w-full overflow-x-auto rounded-md border border-neutral-200">
+
+    <div class="flex items-center gap-2 px-4 py-3 border-b border-neutral-200">
+      <div class="flex items-center gap-1 text-neutral-500">
+        <input type="checkbox" class="w-4 h-4 rounded border-neutral-300">
+        <i class="fa-solid fa-chevron-down text-xs"></i>
+      </div>
+
+      <div class="flex items-center gap-1 ml-2">
+        <button class="flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-neutral-200 text-neutral-600 text-xs hover:bg-neutral-50">
+          <i class="fa-regular fa-address-card"></i>
+          Card
+        </button>
+        <button class="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-white border border-neutral-400 text-neutral-900 text-xs font-medium shadow-sm">
+          <i class="fa-solid fa-list"></i>
+          List
+        </button>
+      </div>
+
+      <div class="flex items-center gap-4 ml-auto text-neutral-500 text-xs">
+        <button class="flex items-center gap-1.5 hover:text-neutral-700">
+          <i class="fa-regular fa-clone"></i>
+          Display
+        </button>
+        <button class="flex items-center gap-1.5 hover:text-neutral-700">
+          <i class="fa-solid fa-sliders"></i>
+          Sort by
+        </button>
+        <button class="flex items-center gap-1.5 hover:text-neutral-700">
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+          Actions
+        </button>
+      </div>
+    </div>
+
+    <table class="w-full border-collapse">
+      <thead>
+        <tr class="bg-neutral-800 text-white text-left text-xs">
+          <th class="px-4 py-3 font-semibold w-8"></th>
+          <th class="px-4 py-3 font-semibold">Address</th>
+          <th class="px-4 py-3 font-semibold">Property Type</th>
+          <th class="px-4 py-3 font-semibold text-center">Beds</th>
+          <th class="px-4 py-3 font-semibold text-right">Sq Ft</th>
+          <th class="px-4 py-3 font-semibold">Owner Email</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-neutral-100">
+
+        <tr class="hover:bg-neutral-50 transition-colors duration-100">
+          <td class="px-4 py-4">
+            <input type="checkbox" class="w-4 h-4 rounded border-neutral-300">
+          </td>
+          <td class="px-4 py-4">
+            <div class="font-medium text-neutral-900 text-xs">741 OTT ST</div>
+            <div class="text-neutral-400 text-xs">BRANCHVILLE, SC, 29432</div>
+          </td>
+          <td class="px-4 py-4 text-neutral-600">Single Family Residential</td>
+          <td class="px-4 py-4 text-center text-neutral-700">3</td>
+          <td class="px-4 py-4 text-right text-neutral-700">1,356</td>
+          <td class="px-4 py-4 text-center text-neutral-400">
+            <svg class="icon-zoom text-neutral-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 10c0 1.71-.572 3.287-1.536 4.548l4.743 4.745a1 1 0 0 1-1.32 1.497l-.094-.083-4.745-4.743A7.5 7.5 0 1 1 17.5 10ZM10 5.5a1 1 0 0 0-1 1V9H6.5a1 1 0 1 0 0 2H9v2.5a1 1 0 1 0 2 0V11h2.5a1 1 0 1 0 0-2H11V6.5a1 1 0 0 0-1-1Z"/></svg>
+          </td>
+        </tr>
+
+        <tr class="hover:bg-neutral-50 transition-colors duration-100">
+          <td class="px-4 py-4">
+            <input type="checkbox" class="w-4 h-4 rounded border-neutral-300">
+          </td>
+          <td class="px-4 py-4">
+            <div class="font-medium text-neutral-900 text-xs">130 HUNTER ST</div>
+            <div class="text-neutral-400 text-xs">BRANCHVILLE, SC, 29432</div>
+          </td>
+          <td class="px-4 py-4 text-neutral-600">Single Family Residential</td>
+          <td class="px-4 py-4 text-center text-neutral-700">2</td>
+          <td class="px-4 py-4 text-right text-neutral-700">1,383</td>
+          <td class="px-4 py-4 text-center text-neutral-400">
+            <svg class="icon-zoom text-neutral-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 10c0 1.71-.572 3.287-1.536 4.548l4.743 4.745a1 1 0 0 1-1.32 1.497l-.094-.083-4.745-4.743A7.5 7.5 0 1 1 17.5 10ZM10 5.5a1 1 0 0 0-1 1V9H6.5a1 1 0 1 0 0 2H9v2.5a1 1 0 1 0 2 0V11h2.5a1 1 0 1 0 0-2H11V6.5a1 1 0 0 0-1-1Z"/></svg>
+          </td>
+        </tr>
+
+        <tr class="hover:bg-neutral-50 transition-colors duration-100">
+          <td class="px-4 py-4">
+            <input type="checkbox" class="w-4 h-4 rounded border-neutral-300">
+          </td>
+          <td class="px-4 py-4">
+            <div class="font-medium text-neutral-900 text-xs">7685 FREEDOM RD</div>
+            <div class="text-neutral-400 text-xs">BRANCHVILLE, SC, 29432</div>
+          </td>
+          <td class="px-4 py-4 text-neutral-600">Mobile/Manufactured Home</td>
+          <td class="px-4 py-4 text-center text-neutral-700">3</td>
+          <td class="px-4 py-4 text-right text-neutral-700">1,344</td>
+          <td class="px-4 py-4 text-center text-neutral-400"></td>
+        </tr>
+
+        <tr class="hover:bg-neutral-50 transition-colors duration-100">
+          <td class="px-4 py-4">
+            <input type="checkbox" class="w-4 h-4 rounded border-neutral-300">
+          </td>
+          <td class="px-4 py-4">
+            <div class="font-bold text-neutral-900 text-xs">7315 FREEDOM RD</div>
+            <div class="text-neutral-400 text-xs">BRANCHVILLE, SC, 29432</div>
+          </td>
+          <td class="px-4 py-4 text-neutral-600">Single Family Residential</td>
+          <td class="px-4 py-4 text-center text-neutral-700">6</td>
+          <td class="px-4 py-4 text-right text-neutral-700">4,126</td>
+          <td class="px-4 py-4 text-center text-neutral-400">
+            <svg class="icon-zoom text-neutral-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 10c0 1.71-.572 3.287-1.536 4.548l4.743 4.745a1 1 0 0 1-1.32 1.497l-.094-.083-4.745-4.743A7.5 7.5 0 1 1 17.5 10ZM10 5.5a1 1 0 0 0-1 1V9H6.5a1 1 0 1 0 0 2H9v2.5a1 1 0 1 0 2 0V11h2.5a1 1 0 1 0 0-2H11V6.5a1 1 0 0 0-1-1Z"/></svg>
+          </td>
+        </tr>
+
+        <tr class="hover:bg-neutral-50 transition-colors duration-100">
+          <td class="px-4 py-4">
+            <input type="checkbox" class="w-4 h-4 rounded border-neutral-300">
+          </td>
+          <td class="px-4 py-4">
+            <div class="font-medium text-neutral-900 text-xs">490 FAIREY ST</div>
+            <div class="text-neutral-400 text-xs">BRANCHVILLE, SC, 29432</div>
+          </td>
+          <td class="px-4 py-4 text-neutral-600">Single Family Residential</td>
+          <td class="px-4 py-4 text-center text-neutral-700">4</td>
+          <td class="px-4 py-4 text-right text-neutral-700">2,484</td>
+          <td class="px-4 py-4 text-center text-neutral-400">
+            <svg class="icon-zoom text-neutral-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 10c0 1.71-.572 3.287-1.536 4.548l4.743 4.745a1 1 0 0 1-1.32 1.497l-.094-.083-4.745-4.743A7.5 7.5 0 1 1 17.5 10ZM10 5.5a1 1 0 0 0-1 1V9H6.5a1 1 0 1 0 0 2H9v2.5a1 1 0 1 0 2 0V11h2.5a1 1 0 1 0 0-2H11V6.5a1 1 0 0 0-1-1Z"/></svg>
+          </td>
+        </tr>
+
+        <tr class="hover:bg-neutral-50 transition-colors duration-100">
+          <td class="px-4 py-4">
+            <input type="checkbox" class="w-4 h-4 rounded border-neutral-300">
+          </td>
+          <td class="px-4 py-4">
+            <div class="font-medium text-neutral-900 text-xs">1051 OTT ST</div>
+            <div class="text-neutral-400 text-xs">BRANCHVILLE, SC, 29432</div>
+          </td>
+          <td class="px-4 py-4 text-neutral-600">Single Family Residential</td>
+          <td class="px-4 py-4 text-center text-neutral-700">2</td>
+          <td class="px-4 py-4 text-right text-neutral-700">850</td>
+          <td class="px-4 py-4 text-center text-neutral-400"></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
