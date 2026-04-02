@@ -35,6 +35,13 @@ useSeoMeta({
         <TemplateMenu />
       </template>
 
+      <template #default>
+        <nav class="hidden sm:flex items-center gap-4 text-sm">
+          <NuxtLink to="/products" class="text-muted hover:text-highlighted transition-colors">Список продуктів</NuxtLink>
+          <NuxtLink to="/table" class="text-muted hover:text-highlighted transition-colors">Таблиця</NuxtLink>
+        </nav>
+      </template>
+
       <template #right>
         <UColorModeButton />
 
