@@ -1,27 +1,22 @@
 <script setup lang="ts">
+	import type { SubscriptionPlan } from '~/stores/useSubscriptionStore';
+
 	useHead({ title: 'Оплата підписки' });
 
-	interface PlanFeature {
-		text: string;
-		sub?: string;
-	}
+	const { data: plans } = await useFetch<SubscriptionPlan[]>('/api/plans');
 
-	interface Plan {
-		id: string;
-		name: string;
-		price: number;
-		yearlyPrice: number;
-		yearlyOriginal: number;
-		savings: number;
-		features: PlanFeature[];
-	}
+	const subscriptionStore = useSubscriptionStore();
+	const { selectedPlan: storedPlan } = storeToRefs(subscriptionStore);
 
-	const { data: plans } = await useFetch<Plan[]>('/api/plans');
+	const selectedPlanId = ref(storedPlan.value?.id ?? 'team');
 
-	const selectedPlanId = ref('team');
 	const selectedPlan = computed(
 		() => plans.value?.find((p) => p.id === selectedPlanId.value) ?? plans.value?.[1]
 	);
+
+	watch(selectedPlan, (plan) => {
+		if (plan) subscriptionStore.selectPlan(plan);
+	}, { immediate: true });
 
 	const form = reactive({
 		cardNumber: '',

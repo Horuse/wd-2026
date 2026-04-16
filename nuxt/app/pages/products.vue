@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { SubscriptionPlan } from '~/stores/useSubscriptionStore'
+
 useHead({ title: 'Список продуктів' })
 
 interface Product {
@@ -13,6 +15,16 @@ interface Product {
 }
 
 const { data: products, status } = await useFetch<Product[]>('/api/products')
+const { data: plans } = await useFetch<SubscriptionPlan[]>('/api/plans')
+
+const subscriptionStore = useSubscriptionStore()
+
+async function chooseSubscription(planId: string) {
+  const plan = plans.value?.find(p => p.id === planId)
+  if (!plan) return
+  subscriptionStore.selectPlan(plan)
+  await navigateTo('/checkout')
+}
 </script>
 
 <template>
@@ -31,7 +43,10 @@ const { data: products, status } = await useFetch<Product[]>('/api/products')
           </div>
           <p class="text-sm text-neutral-400 mb-1">billed yearly at <s class="text-neutral-400">$1,188</s> <b class="text-neutral-500">$999</b></p>
           <span class="inline-block text-xs font-bold bg-blue-100 text-blue-600 rounded px-3 py-1 mb-5">$189 in savings</span>
-          <button class="w-full py-2.5 rounded-lg text-sm font-bold text-white bg-yellow-400 hover:bg-yellow-500 transition-colors duration-200 mb-5">Try It Free</button>
+          <button
+            class="w-full py-2.5 rounded-lg text-sm font-bold text-white bg-yellow-400 hover:bg-yellow-500 transition-colors duration-200 mb-5"
+            @click="chooseSubscription('starter')"
+          >Try It Free</button>
           <hr class="border-neutral-200 dark:border-neutral-700 mb-5">
           <ul class="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
             <li class="flex gap-2"><span class="text-green-500 font-bold">✦</span><div><span class="font-semibold">Primary user only</span><br><span class="text-neutral-400">(extra team members for $35/month)</span></div></li>
@@ -59,7 +74,10 @@ const { data: products, status } = await useFetch<Product[]>('/api/products')
           </div>
           <p class="text-sm text-neutral-400 mb-1">billed yearly at <s class="text-neutral-400">$2,988</s> <b class="text-neutral-500">$2,490</b></p>
           <span class="inline-block text-xs font-bold bg-blue-100 text-blue-600 rounded px-3 py-1 mb-5">$498 in savings</span>
-          <button class="w-full py-2.5 rounded-lg text-sm font-bold text-white bg-yellow-400 hover:bg-yellow-500 transition-colors duration-200 mb-5">Try It Free</button>
+          <button
+            class="w-full py-2.5 rounded-lg text-sm font-bold text-white bg-yellow-400 hover:bg-yellow-500 transition-colors duration-200 mb-5"
+            @click="chooseSubscription('team')"
+          >Try It Free</button>
           <hr class="border-neutral-200 dark:border-neutral-700 mb-5">
           <ul class="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
             <li class="flex gap-2"><span class="text-green-500 font-bold">✦</span><div><span class="font-semibold">Primary user + 2 free team members</span><br><span class="text-neutral-400">(extra team members for $25/month)</span></div></li>
@@ -87,7 +105,10 @@ const { data: products, status } = await useFetch<Product[]>('/api/products')
           </div>
           <p class="text-sm text-neutral-400 mb-1">billed yearly at <s class="text-neutral-400">$6,588</s> <b class="text-neutral-500">$5,490</b></p>
           <span class="inline-block text-xs font-bold bg-blue-100 text-blue-600 rounded px-3 py-1 mb-5">$1,098 in savings</span>
-          <button class="w-full py-2.5 rounded-lg text-sm font-bold text-white bg-yellow-400 hover:bg-yellow-500 transition-colors duration-200 mb-5">Try It Free</button>
+          <button
+            class="w-full py-2.5 rounded-lg text-sm font-bold text-white bg-yellow-400 hover:bg-yellow-500 transition-colors duration-200 mb-5"
+            @click="chooseSubscription('business')"
+          >Try It Free</button>
           <hr class="border-neutral-200 dark:border-neutral-700 mb-5">
           <ul class="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
             <li class="flex gap-2"><span class="text-green-500 font-bold">✦</span><div><span class="font-semibold">Primary user + 6 free team members</span><br><span class="text-neutral-400">(extra team members for $20/month)</span></div></li>
